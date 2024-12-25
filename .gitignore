@@ -1,0 +1,14 @@
+/node_modules
+/logs
+.env
+/app/cert/*
+.DS_Store
+/app/*/.DS_Store
+.idea/
+.idea
+/dist
+yarn.lock
+package-lock.json
+._*
+.yarnrc.yml
+.yarn
