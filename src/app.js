@@ -35,6 +35,20 @@ checkOverLoad()
 app.use('/', require('./routers'))
 
 // handling error
+app.use((req, res, next) => {
+    const error = new Error('Error')
+    error.status = 404
+    next(error)
+})
 
+app.use((error, req, res, next) => {
+    const statusCode = error.status || 500
+    return res.status(statusCode).json({
+        status: 'errorxxx',
+        code: statusCode,
+        messageObj: error,
+        message: error.message,
+    })
+})
 
 module.exports = app

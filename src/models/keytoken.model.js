@@ -6,7 +6,7 @@ const DOCUMENT_NAME = 'Key'
 const COLLECTION_NAME = 'Keys'
 
 // Declare the Schema of the Mongo model
-var keyTokenSchema = new mongoose.Schema({
+var keyTokenSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         required: true,
@@ -20,9 +20,13 @@ var keyTokenSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    refreshToken: {
+    refreshTokensUsed: {
         type: Array,
-        default: [],
+        default: [], // những RT đã được sử dụng
+    },
+    refreshToken: {
+        type: String,
+        required: true,
     },
 }, {
     timestamps: true,
@@ -30,4 +34,4 @@ var keyTokenSchema = new mongoose.Schema({
 });
 
 //Export the model
-module.exports = mongoose.model(DOCUMENT_NAME, keyTokenSchema);
+module.exports = model(DOCUMENT_NAME, keyTokenSchema);

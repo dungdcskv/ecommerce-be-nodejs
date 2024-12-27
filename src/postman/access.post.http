@@ -4,9 +4,10 @@
 // signup
 POST {{url_dev}}shop/signup
 Content-Type: application/json
+x-api-key: asdasd
 
 {
-    "name": "cvbcvb",
-    "email": "adasdbvcbasasasass@gmail.com",
-    "password": "abc123"
+    "name": "222",
+    "email": "222@gmail.com",
+    "password": "222"
 }
