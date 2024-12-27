@@ -27,9 +27,9 @@ app.use(express.urlencoded({
 
 // init db
 require('./dbs/init.mongodb')
-const { countConnect, checkOverLoad } = require('./helpers/check.connect')
-countConnect()
-checkOverLoad()
+// const { countConnect, checkOverLoad } = require('./helpers/check.connect')
+// countConnect()
+// checkOverLoad()
 
 // init  router
 app.use('/', require('./routers'))
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
     const statusCode = error.status || 500
     return res.status(statusCode).json({
-        status: 'errorxxx',
+        status: 'kkk',
         code: statusCode,
         messageObj: error,
         message: error.message,
