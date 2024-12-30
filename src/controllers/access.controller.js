@@ -6,10 +6,21 @@ const AccessService = require("../services/access.service");
 class AccessController {
 
     handleRefreshToken = async (req, res, next) => {
+        // new SuccessResponse({
+        //     message: 'Get token success',
+        //     metaData: await AccessService.handleRefreshToken(req.body.refreshToken)
+        // }).send(res)
+
+        // v2: fixed
         new SuccessResponse({
             message: 'Get token success',
-            metaData: await AccessService.handleRefreshToken(req.body.refreshToken)
+            metaData: await AccessService.handleRefreshTokenV2({
+                refreshToken: req.refreshToken,
+                user: req.user,
+                keyStore: req.keyStore,
+            })
         }).send(res)
+
     }
 
     logout = async (req, res, next) => {
@@ -28,7 +39,6 @@ class AccessController {
     }
 
     signUp = async (req, res, next) => {
-        // return res.status(201).json(await AccessService.signUp(req.body))
         new Create({
             message: 'Registed OK',
             metaData: await AccessService.signUp(req.body)
