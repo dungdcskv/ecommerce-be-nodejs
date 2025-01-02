@@ -34,6 +34,9 @@ var productSchema = new Schema({
     collection: COLLECTION_NAME,
 });
 
+// create index for search
+productSchema.index({ product_name: 'text', product_description: 'text' })
+
 
 // document middleware: runs before .save() and .create()...
 productSchema.pre('save', function (next) {
