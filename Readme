@@ -1,0 +1,5 @@
+Step:
+- copy .env.test to .env
+- yarn install
+- docker-compose up
+- npm start

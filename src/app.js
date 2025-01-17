@@ -27,9 +27,16 @@ app.use(express.urlencoded({
 
 // init db
 require('./dbs/init.mongodb')
+require('./dbs/model.redis')
 // const { countConnect, checkOverLoad } = require('./helpers/check.connect')
 // countConnect()
 // checkOverLoad()
+
+
+// // test pub sub redis
+// require('./tests/inventory.test')
+// const productTest = require('./tests/product.test')
+// productTest.purchaseProduct('product:001', 10)
 
 // init  router
 app.use('/', require('./routers'))

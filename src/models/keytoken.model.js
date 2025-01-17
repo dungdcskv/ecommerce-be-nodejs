@@ -5,7 +5,7 @@ const { Schema, model, mongoose } = require('mongoose'); // Erase if already req
 const DOCUMENT_NAME = 'Key'
 const COLLECTION_NAME = 'Keys'
 
-// Declare the Schema of the Mongo model
+
 var keyTokenSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -33,5 +33,5 @@ var keyTokenSchema = new Schema({
     collection: COLLECTION_NAME,
 });
 
-//Export the model
+
 module.exports = model(DOCUMENT_NAME, keyTokenSchema);

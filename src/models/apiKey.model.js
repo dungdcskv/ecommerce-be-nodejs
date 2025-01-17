@@ -5,7 +5,7 @@ const { mongoose, Schema } = require('mongoose'); // Erase if already required
 const DOCUMENT_NAME = 'Apikey'
 const COLLECTION_NAME = 'Apikeys'
 
-// Declare the Schema of the Mongo model
+
 var customSchema = new Schema({
     key: {
         type: String,
@@ -26,5 +26,5 @@ var customSchema = new Schema({
     collection: COLLECTION_NAME,
 });
 
-//Export the model
+
 module.exports = mongoose.model(DOCUMENT_NAME, customSchema);

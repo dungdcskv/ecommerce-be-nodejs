@@ -5,7 +5,7 @@ const { mongoose, Schema, Types } = require('mongoose'); // Erase if already req
 const DOCUMENT_NAME = 'Inventory'
 const COLLECTION_NAME = 'Inventories'
 
-// Declare the Schema of the Mongo model
+
 var inventorySchema = new Schema({
     inven_productId: { type: Types.ObjectId, ref: 'Product' },
     inven_shopId: { type: Types.ObjectId, ref: 'Shop' },
@@ -18,7 +18,7 @@ var inventorySchema = new Schema({
     collection: COLLECTION_NAME,
 });
 
-//Export the model
+
 module.exports = {
     inventory: mongoose.model(DOCUMENT_NAME, inventorySchema),
 };

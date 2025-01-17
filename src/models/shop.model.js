@@ -5,7 +5,7 @@ const { mongoose, Schema } = require('mongoose'); // Erase if already required
 const DOCUMENT_NAME = 'Shop'
 const COLLECTION_NAME = 'Shops'
 
-// Declare the Schema of the Mongo model
+
 var shopSchema = new Schema({
     name: {
         type: String,
@@ -44,5 +44,5 @@ var shopSchema = new Schema({
     collection: COLLECTION_NAME,
 });
 
-//Export the model
+
 module.exports = mongoose.model(DOCUMENT_NAME, shopSchema);

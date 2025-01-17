@@ -1,5 +1,4 @@
 const { getSelectData, ungGetSelectData } = require("../../utils")
-const { inventory } = require("../inventory.model")
 
 const findAllDiscountCodeUnSelect = async ({
     limit = 50, page = 1, sort = 'ctime',
@@ -33,7 +32,12 @@ const findAllDiscountCodeSelect = async ({
     return documents
 }
 
+const checkDiscountExists = async ({model, filter}) => {
+    return await model.findOne(filter).lean()
+}
+
 module.exports = {
     findAllDiscountCodeUnSelect,
     findAllDiscountCodeSelect,
+    checkDiscountExists,
 }

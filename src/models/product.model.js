@@ -6,7 +6,7 @@ const { default: slugify } = require('slugify');
 const DOCUMENT_NAME = 'Product'
 const COLLECTION_NAME = 'Products'
 
-// Declare the Schema of the Mongo model
+
 var productSchema = new Schema({
     product_name: { type: String, require: true },
     product_thump: { type: String, require: true },
@@ -79,7 +79,7 @@ const furnitureSchema = new Schema({
 })
 
 
-//Export the model
+
 module.exports = {
     product: model(DOCUMENT_NAME, productSchema),
     electronic: model('electronic', electronicSchema),

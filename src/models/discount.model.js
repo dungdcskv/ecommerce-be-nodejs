@@ -5,7 +5,7 @@ const { mongoose, Schema, Types } = require('mongoose'); // Erase if already req
 const DOCUMENT_NAME = 'Discount'
 const COLLECTION_NAME = 'Discounts'
 
-// Declare the Schema of the Mongo model
+
 var shopSchema = new Schema({
     discount_name: { type: String, required: true },
     discount_description: { type: String, required: true },
@@ -30,5 +30,5 @@ var shopSchema = new Schema({
     collection: COLLECTION_NAME,
 });
 
-//Export the model
+
 module.exports = mongoose.model(DOCUMENT_NAME, shopSchema);
