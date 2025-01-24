@@ -3,3 +3,11 @@ Step:
 - yarn install
 - docker-compose up
 - npm start
+
+
+
+
+docker -v
+docker search kafka
+docker pull bitnami/kafka
+docker network create kafka-network
